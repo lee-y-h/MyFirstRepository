@@ -1,0 +1,3 @@
+D:/git/Git/projects/project1/cmake-build-debug/CMakeFiles/project1.elf.dir
+D:/git/Git/projects/project1/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/git/Git/projects/project1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
