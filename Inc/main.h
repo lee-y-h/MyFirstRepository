@@ -21,7 +21,15 @@
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef __MAIN_H
 #define __MAIN_H
-
+#include <iostream>
+class roboMaster{
+private:
+  int hp;
+  int power;
+public:
+  void move();
+  void deltahp();
+};
 #ifdef __cplusplus
 extern "C" {
 #endif
