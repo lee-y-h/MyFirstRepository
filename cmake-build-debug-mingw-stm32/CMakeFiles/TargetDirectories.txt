@@ -1,0 +1,5 @@
+D:/projects/dma_try_again/cmake-build-debug-mingw-stm32/CMakeFiles/dma_try_again.dir
+D:/projects/dma_try_again/cmake-build-debug-mingw-stm32/CMakeFiles/edit_cache.dir
+D:/projects/dma_try_again/cmake-build-debug-mingw-stm32/CMakeFiles/rebuild_cache.dir
+D:/projects/dma_try_again/cmake-build-debug-mingw-stm32/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+D:/projects/dma_try_again/cmake-build-debug-mingw-stm32/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
