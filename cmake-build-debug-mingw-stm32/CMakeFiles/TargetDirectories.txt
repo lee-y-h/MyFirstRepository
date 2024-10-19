@@ -1,0 +1,3 @@
+D:/projects/dbus_easy_try/cmake-build-debug-mingw-stm32/CMakeFiles/dbus_easy_try.elf.dir
+D:/projects/dbus_easy_try/cmake-build-debug-mingw-stm32/CMakeFiles/edit_cache.dir
+D:/projects/dbus_easy_try/cmake-build-debug-mingw-stm32/CMakeFiles/rebuild_cache.dir
