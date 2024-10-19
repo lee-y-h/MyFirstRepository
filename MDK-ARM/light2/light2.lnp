@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp.sp
+"light2\startup_stm32f427xx.o"
+"light2\main.o"
+"light2\gpio.o"
+"light2\tim.o"
+"light2\stm32f4xx_it.o"
+"light2\stm32f4xx_hal_msp.o"
+"light2\callback.o"
+"light2\stm32f4xx_hal_tim.o"
+"light2\stm32f4xx_hal_tim_ex.o"
+"light2\stm32f4xx_hal_rcc.o"
+"light2\stm32f4xx_hal_rcc_ex.o"
+"light2\stm32f4xx_hal_flash.o"
+"light2\stm32f4xx_hal_flash_ex.o"
+"light2\stm32f4xx_hal_flash_ramfunc.o"
+"light2\stm32f4xx_hal_gpio.o"
+"light2\stm32f4xx_hal_dma_ex.o"
+"light2\stm32f4xx_hal_dma.o"
+"light2\stm32f4xx_hal_pwr.o"
+"light2\stm32f4xx_hal_pwr_ex.o"
+"light2\stm32f4xx_hal_cortex.o"
+"light2\stm32f4xx_hal.o"
+"light2\stm32f4xx_hal_exti.o"
+"light2\system_stm32f4xx.o"
+--strict --scatter "light2\light2.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "light2.map" -o light2\light2.axf

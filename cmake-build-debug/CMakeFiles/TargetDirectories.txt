@@ -1,0 +1,5 @@
+D:/projects/light2/cmake-build-debug/CMakeFiles/light2.dir
+D:/projects/light2/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/projects/light2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/projects/light2/cmake-build-debug/cmake/stm32cubemx/CMakeFiles/edit_cache.dir
+D:/projects/light2/cmake-build-debug/cmake/stm32cubemx/CMakeFiles/rebuild_cache.dir
