@@ -1,0 +1,3 @@
+D:/projects/can_Tx_Rx/cmake-build-debug-mingw-stm32/CMakeFiles/can_Tx_Rx.elf.dir
+D:/projects/can_Tx_Rx/cmake-build-debug-mingw-stm32/CMakeFiles/edit_cache.dir
+D:/projects/can_Tx_Rx/cmake-build-debug-mingw-stm32/CMakeFiles/rebuild_cache.dir
