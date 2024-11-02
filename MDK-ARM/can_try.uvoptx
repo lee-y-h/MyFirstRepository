@@ -153,44 +153,96 @@
         <Ww>
           <count>0</count>
           <WinNumber>1</WinNumber>
-          <ItemText>rx_buf</ItemText>
+          <ItemText>motor1,0x0A</ItemText>
         </Ww>
         <Ww>
           <count>1</count>
           <WinNumber>1</WinNumber>
-          <ItemText>motor1,0x0A</ItemText>
+          <ItemText>sendBuf</ItemText>
         </Ww>
         <Ww>
           <count>2</count>
           <WinNumber>1</WinNumber>
-          <ItemText>sendBuf</ItemText>
+          <ItemText>tx_data</ItemText>
         </Ww>
         <Ww>
           <count>3</count>
           <WinNumber>1</WinNumber>
-          <ItemText>tx_data</ItemText>
+          <ItemText>pid_speed</ItemText>
         </Ww>
         <Ww>
           <count>4</count>
           <WinNumber>1</WinNumber>
-          <ItemText>pid_speed</ItemText>
+          <ItemText>speed_pid</ItemText>
         </Ww>
         <Ww>
           <count>5</count>
           <WinNumber>1</WinNumber>
-          <ItemText>speed_pid</ItemText>
+          <ItemText>d_angle</ItemText>
         </Ww>
         <Ww>
           <count>6</count>
           <WinNumber>1</WinNumber>
-          <ItemText>REF_SPEED</ItemText>
+          <ItemText>position_pid</ItemText>
+        </Ww>
+      </WatchWindow1>
+      <WatchWindow2>
+        <Ww>
+          <count>0</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>motor1.Motor.angle_</ItemText>
+        </Ww>
+        <Ww>
+          <count>1</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>motor1.Motor.rotate_speed_</ItemText>
+        </Ww>
+        <Ww>
+          <count>2</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>speed_pid.kp_</ItemText>
+        </Ww>
+        <Ww>
+          <count>3</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>speed_pid.ki_</ItemText>
+        </Ww>
+        <Ww>
+          <count>4</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>speed_pid.kd_</ItemText>
+        </Ww>
+        <Ww>
+          <count>5</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>speed_pid.i_max_</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>\\can_try\../User/control.cpp\d_angle</ItemText>
         </Ww>
         <Ww>
           <count>7</count>
-          <WinNumber>1</WinNumber>
-          <ItemText>speed_pid</ItemText>
+          <WinNumber>2</WinNumber>
+          <ItemText>position_pid.kp_</ItemText>
         </Ww>
-      </WatchWindow1>
+        <Ww>
+          <count>8</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>position_pid.ki_</ItemText>
+        </Ww>
+        <Ww>
+          <count>9</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>position_pid.kd_</ItemText>
+        </Ww>
+        <Ww>
+          <count>10</count>
+          <WinNumber>2</WinNumber>
+          <ItemText>position_pid.i_max_</ItemText>
+        </Ww>
+      </WatchWindow2>
       <Tracepoint>
         <THDelay>0</THDelay>
       </Tracepoint>

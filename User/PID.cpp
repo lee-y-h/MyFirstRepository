@@ -11,21 +11,21 @@ PID::PID(float kp, float ki, float kd, float i_max, float out_max): kp_(kp), ki_
 }
 
 float PID::calc(float ref, float fdb) {
+    ref_ = ref;
+    fdb_ = fdb;
     //算err
     last_err_ = err_;
     err_ = ref - fdb;
     err_sum_ += err_;
-    if (err_sum_ > i_max_ || err_sum_ < -i_max_) err_sum_ = i_max_;
+    if (err_sum_ > i_max_ ) err_sum_ = i_max_;
+    else if (err_sum_ < -i_max_) err_sum_ = -i_max_;
 
     //算output
     pout_ = kp_ * err_;
     dout_ = kd_ * (err_ - last_err_);
     iout_ = ki_ * err_sum_;
     output_ = pout_ + dout_ + iout_;
-    if (output_ > out_max_ || output_ < -out_max_) output_= out_max_;
-
-    ref_ = ref/36;
-    fdb_ = fdb/36;
-    
+    if (output_ > out_max_ ) output_= out_max_;
+    if (output_ < -out_max_) output_= -out_max_;
     return output_;
 }

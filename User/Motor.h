@@ -30,11 +30,11 @@ public:
         temp_ = 25;
     }
 
+    //解码
     //线性映射函数
     float  linearMapping(int in, int in_min, int in_max, float out_min, float out_max) {
         return (out_max - out_min) / static_cast<float>(in_max - in_min) * static_cast<float>(in - in_min) + out_min;
     }
-
     //报文解析函数1
     void canRxMsgCallback_v1(uint8_t rx_data[8]) {
 
@@ -50,9 +50,6 @@ public:
 
         rotate_speed_ = static_cast<float>(temp_rotate_speed_)/ratio_;
 
-        speed = temp_rotate_speed_;
-
-
         //解析转矩电流
         int16_t temp_current_ = rx_data[4];
         temp_current_ <<= 8;
@@ -62,29 +59,31 @@ public:
         //解析电机温度
         temp_ = rx_data[6];
     }
-
     //报文解析函数2
     void canRxMsgCallback_v2(uint8_t rx_data[8]) {
-        if (ecd_angle_ - last_ecd_angle_ >= 0) {
-            delta_ecd_angle_ = ecd_angle_ - last_ecd_angle_;
-        }
-        else {
+        if(ecd_angle_ - last_ecd_angle_<-180) {
             delta_ecd_angle_ = ecd_angle_ - last_ecd_angle_+360;
+        }else if(ecd_angle_ - last_ecd_angle_>180) {
+            delta_ecd_angle_ = ecd_angle_ - last_ecd_angle_-360;
+        }else {
+            delta_ecd_angle_ = ecd_angle_-last_ecd_angle_;
         }
-
     }
-
     //计算电机的输出轴角度
     void canRxMsgCallback_v3(uint8_t rx_data[8]) {
-        delta_angle_ = delta_ecd_angle_ * ratio_;
+        delta_angle_ = delta_ecd_angle_;
         angle_ += delta_angle_;
         last_ecd_angle_ = ecd_angle_;
-
-        if (angle_ > 360) angle_ -= 360;
     }
 
+    //pid位置
+    float getAngle() const {//rpm
+        return angle_;
+    }
+
+    //pid速度
     float getRotateSpeed() const {//rpm
-        return rotate_speed_*ratio_;
+        return rotate_speed_;
     }
     void setRotateSpeed(float speed, uint8_t tx_data[2]) {//rpm
         int16_t temp_speed = static_cast<int16_t>(speed);

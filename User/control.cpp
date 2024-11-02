@@ -13,16 +13,13 @@ CAN_TxHeaderTypeDef can_Tx;
 uint8_t sendBuf[8];
 uint32_t box;
 //PID
-float KP=0.5;
-float KI=0;
-float KD=0;
-float IM=0;
-float OM=2457;
-float REF_SPEED=60*36;
-float pid_speed=0;
+float d_angle = 0.0;
+float ref_angle = 0.0;
+float ref_speed = 0.0;
+float pid_speed = 0.0;
 uint8_t tx_data[2];
-
-PID speed_pid(KP,KI,KD,IM,OM);
+PID speed_pid(5,0,0,10,2457);
+PID position_pid(0.5,0,0,10,400*36);
 
 void controlInit() {
 
@@ -67,7 +64,15 @@ void controlLoop1() {
     motor1.canRxMsgCallback_v2(rx_buf);
     motor1.canRxMsgCallback_v3(rx_buf);
 
-    pid_speed = speed_pid.calc(REF_SPEED, motor1.getRotateSpeed());
+    float angle = motor1.getAngle();
+    if(d_angle!=0) {
+        ref_angle = angle+d_angle;
+        d_angle = 0;
+    }
+
+    ref_speed = position_pid.calc(ref_angle,angle);
+
+    pid_speed = speed_pid.calc(ref_speed, motor1.getRotateSpeed());
     motor1.setRotateSpeed(pid_speed, tx_data);
     sendBuf[6] = tx_data[0];
     sendBuf[7] = tx_data[1];
